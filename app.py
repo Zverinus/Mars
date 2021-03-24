@@ -1,4 +1,4 @@
-from flask import Flask, url_for, request
+from flask import Flask, url_for, request, render_template
 
 
 app = Flask(__name__)
@@ -11,7 +11,8 @@ def start():
 
 @app.route('/index')
 def index():
-    return "И на Марсе будут яблони цвести!"
+    title = "Заготовка"
+    return render_template('base.html', title=title)
 
 
 @app.route('/promotion')
